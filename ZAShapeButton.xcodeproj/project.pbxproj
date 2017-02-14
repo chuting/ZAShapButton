@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7329B4271E5313E500F33901 /* button.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7329B4231E5313E500F33901 /* button.xcassets */; };
+		7329B4281E5313E500F33901 /* ZAShapeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7329B4261E5313E500F33901 /* ZAShapeButton.m */; };
 		73ED65DC1B43DD76004B7402 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73ED65DB1B43DD76004B7402 /* main.m */; };
 		73ED65DF1B43DD76004B7402 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73ED65DE1B43DD76004B7402 /* AppDelegate.m */; };
 		73ED65E21B43DD76004B7402 /* ZAShapeButton.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 73ED65E01B43DD76004B7402 /* ZAShapeButton.xcdatamodeld */; };
@@ -15,7 +17,6 @@
 		73ED65EA1B43DD76004B7402 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73ED65E91B43DD76004B7402 /* Images.xcassets */; };
 		73ED65ED1B43DD76004B7402 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73ED65EB1B43DD76004B7402 /* LaunchScreen.xib */; };
 		73ED65F91B43DD76004B7402 /* ZAShapeButtonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 73ED65F81B43DD76004B7402 /* ZAShapeButtonTests.m */; };
-		73ED66041B43DD96004B7402 /* ZAShapeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 73ED66031B43DD96004B7402 /* ZAShapeButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7329B4231E5313E500F33901 /* button.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = button.xcassets; sourceTree = "<group>"; };
+		7329B4251E5313E500F33901 /* ZAShapeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAShapeButton.h; sourceTree = "<group>"; };
+		7329B4261E5313E500F33901 /* ZAShapeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAShapeButton.m; sourceTree = "<group>"; };
 		73ED65D61B43DD76004B7402 /* ZAShapeButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZAShapeButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73ED65DA1B43DD76004B7402 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73ED65DB1B43DD76004B7402 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -43,8 +47,6 @@
 		73ED65F21B43DD76004B7402 /* ZAShapeButtonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZAShapeButtonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		73ED65F71B43DD76004B7402 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73ED65F81B43DD76004B7402 /* ZAShapeButtonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZAShapeButtonTests.m; sourceTree = "<group>"; };
-		73ED66021B43DD96004B7402 /* ZAShapeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAShapeButton.h; sourceTree = "<group>"; };
-		73ED66031B43DD96004B7402 /* ZAShapeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAShapeButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7329B4211E5313E500F33901 /* ShapeButton */ = {
+			isa = PBXGroup;
+			children = (
+				7329B4221E5313E500F33901 /* Assets */,
+				7329B4241E5313E500F33901 /* Classes */,
+			);
+			path = ShapeButton;
+			sourceTree = "<group>";
+		};
+		7329B4221E5313E500F33901 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				7329B4231E5313E500F33901 /* button.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		7329B4241E5313E500F33901 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7329B4251E5313E500F33901 /* ZAShapeButton.h */,
+				7329B4261E5313E500F33901 /* ZAShapeButton.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		73ED65CD1B43DD76004B7402 = {
 			isa = PBXGroup;
 			children = (
@@ -86,8 +114,7 @@
 		73ED65D81B43DD76004B7402 /* ZAShapeButton */ = {
 			isa = PBXGroup;
 			children = (
-				73ED66021B43DD96004B7402 /* ZAShapeButton.h */,
-				73ED66031B43DD96004B7402 /* ZAShapeButton.m */,
+				7329B4211E5313E500F33901 /* ShapeButton */,
 				73ED65DD1B43DD76004B7402 /* AppDelegate.h */,
 				73ED65DE1B43DD76004B7402 /* AppDelegate.m */,
 				73ED65E31B43DD76004B7402 /* ViewController.h */,
@@ -210,6 +237,7 @@
 				73ED65E81B43DD76004B7402 /* Main.storyboard in Resources */,
 				73ED65ED1B43DD76004B7402 /* LaunchScreen.xib in Resources */,
 				73ED65EA1B43DD76004B7402 /* Images.xcassets in Resources */,
+				7329B4271E5313E500F33901 /* button.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,7 +257,7 @@
 			files = (
 				73ED65E21B43DD76004B7402 /* ZAShapeButton.xcdatamodeld in Sources */,
 				73ED65DF1B43DD76004B7402 /* AppDelegate.m in Sources */,
-				73ED66041B43DD96004B7402 /* ZAShapeButton.m in Sources */,
+				7329B4281E5313E500F33901 /* ZAShapeButton.m in Sources */,
 				73ED65E51B43DD76004B7402 /* ViewController.m in Sources */,
 				73ED65DC1B43DD76004B7402 /* main.m in Sources */,
 			);
@@ -428,6 +456,7 @@
 				73ED65FE1B43DD76004B7402 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		73ED65FF1B43DD76004B7402 /* Build configuration list for PBXNativeTarget "ZAShapeButtonTests" */ = {
 			isa = XCConfigurationList;
@@ -436,6 +465,7 @@
 				73ED66011B43DD76004B7402 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
