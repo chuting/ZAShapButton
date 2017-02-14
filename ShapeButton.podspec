@@ -19,7 +19,7 @@ s.ios.deployment_target = '8.0'
 s.source_files =  'ShapeButton/Classes/**/*'
 
 s.public_header_files = 'ShapeButton/Classes/**/*.h'
-s.resources =   ['OppleCommon/Assets/button.xcassets',]
+s.resources =   ['ShapeButton/Assets/button.xcassets',]
 
 
 s.frameworks = 'UIKit'
