@@ -51,19 +51,19 @@
     [self addGestureRecognizer:longPressGestureRecognizer];
     
     switch (type) {
-        case ButtonType_Rect:
+        case ButtonTypeRect:
             self.image=[UIImage imageNamed:@"virtual_control_rect"] ;
             break;
-        case ButtonType_Round_Single:
+        case ButtonTypeRoundSingle:
             self.image=[UIImage imageNamed:@"virtual_control_round_single"];
             break;
-        case ButtonType_Round:
+        case ButtonTypeRound:
             self.image=[UIImage imageNamed:@"virtual_control_round"];
             break;
-        case ButtonType_H_PlusAndMin:
+        case ButtonTypeHPlusAndMin:
             self.image=[UIImage imageNamed:@"virtual_control_h"]  ;
             break;
-        case ButtonType_V_PlusAndMin:
+        case ButtonTypeVPlusAndMin:
              self.image=[UIImage imageNamed:@"virtual_control_v"];
             break;
         default:
@@ -97,40 +97,40 @@
         [_pathArray removeAllObjects];
     }
     
-    if (buttonType==ButtonType_H_PlusAndMin) {
-        if (position & SelectButtonPosition_Left) {
-              [_pathArray addObject:[self rectShapWithPosition:SelectButtonPosition_Left]];
+    if (buttonType==ButtonTypeHPlusAndMin) {
+        if (position & SelectButtonPositionLeft) {
+              [_pathArray addObject:[self rectShapWithPosition:SelectButtonPositionLeft]];
         }
         
-        if (position & SelectButtonPosition_Right) {
-              [_pathArray addObject:[self rectShapWithPosition:SelectButtonPosition_Right]];
+        if (position & SelectButtonPositionRight) {
+              [_pathArray addObject:[self rectShapWithPosition:SelectButtonPositionRight]];
         }
     }
     
-    if (buttonType==ButtonType_V_PlusAndMin) {
-        if (position & SelectButtonPosition_Top) {
-            [_pathArray addObject:[self rectShapWithPosition:SelectButtonPosition_Top]];
+    if (buttonType==ButtonTypeVPlusAndMin) {
+        if (position & SelectButtonPositionTop) {
+            [_pathArray addObject:[self rectShapWithPosition:SelectButtonPositionTop]];
         }
-        if (position & SelectButtonPosition_Buttom) {
-            [_pathArray addObject:[self rectShapWithPosition:SelectButtonPosition_Buttom]];
+        if (position & SelectButtonPositionButtom) {
+            [_pathArray addObject:[self rectShapWithPosition:SelectButtonPositionButtom]];
         }
     }
     
-    if (buttonType==ButtonType_Round) {
-        if (position & SelectButtonPosition_Top) {
-            [_pathArray addObject:[self roundShapWithPosition:SelectButtonPosition_Top]];
+    if (buttonType==ButtonTypeRound) {
+        if (position & SelectButtonPositionTop) {
+            [_pathArray addObject:[self roundShapWithPosition:SelectButtonPositionTop]];
         }
-        if (position & SelectButtonPosition_Left) {
-            [_pathArray addObject:[self roundShapWithPosition:SelectButtonPosition_Left]];
+        if (position & SelectButtonPositionLeft) {
+            [_pathArray addObject:[self roundShapWithPosition:SelectButtonPositionLeft]];
         }
-        if (position & SelectButtonPosition_Right) {
-            [_pathArray addObject:[self roundShapWithPosition:SelectButtonPosition_Right]];
+        if (position & SelectButtonPositionRight) {
+            [_pathArray addObject:[self roundShapWithPosition:SelectButtonPositionRight]];
         }
-        if (position & SelectButtonPosition_Buttom) {
-            [_pathArray addObject:[self roundShapWithPosition:SelectButtonPosition_Buttom]];
+        if (position & SelectButtonPositionButtom) {
+            [_pathArray addObject:[self roundShapWithPosition:SelectButtonPositionButtom]];
         }
-        if (position & SelectButtonPosition_Center) {
-            [_pathArray addObject:[self roundShapWithPosition:SelectButtonPosition_Center]];
+        if (position & SelectButtonPositionCenter) {
+            [_pathArray addObject:[self roundShapWithPosition:SelectButtonPositionCenter]];
         }
     }
 }
@@ -141,25 +141,25 @@
     if (!_pathArray) {
         _pathArray=[[NSMutableArray alloc]init];
         switch (buttonType) {
-            case ButtonType_H_PlusAndMin:
-                [_pathArray addObject:[self rectShapWithPosition:SelectButtonPosition_Left]];
-                [_pathArray addObject:[self rectShapWithPosition:SelectButtonPosition_Right]];
+            case ButtonTypeHPlusAndMin:
+                [_pathArray addObject:[self rectShapWithPosition:SelectButtonPositionLeft]];
+                [_pathArray addObject:[self rectShapWithPosition:SelectButtonPositionRight]];
                 break;
-            case ButtonType_V_PlusAndMin:
-                [_pathArray addObject:[self rectShapWithPosition:SelectButtonPosition_Top]];
-                [_pathArray addObject:[self rectShapWithPosition:SelectButtonPosition_Buttom]];
+            case ButtonTypeVPlusAndMin:
+                [_pathArray addObject:[self rectShapWithPosition:SelectButtonPositionTop]];
+                [_pathArray addObject:[self rectShapWithPosition:SelectButtonPositionButtom]];
                 break;
-            case ButtonType_Round:
-                [_pathArray addObject:[self roundShapWithPosition:SelectButtonPosition_Left]];
-                [_pathArray addObject:[self roundShapWithPosition:SelectButtonPosition_Right]];
-                [_pathArray addObject:[self roundShapWithPosition:SelectButtonPosition_Top]];
-                [_pathArray addObject:[self roundShapWithPosition:SelectButtonPosition_Buttom]];
-                [_pathArray addObject:[self roundShapWithPosition:SelectButtonPosition_Center]];
+            case ButtonTypeRound:
+                [_pathArray addObject:[self roundShapWithPosition:SelectButtonPositionLeft]];
+                [_pathArray addObject:[self roundShapWithPosition:SelectButtonPositionRight]];
+                [_pathArray addObject:[self roundShapWithPosition:SelectButtonPositionTop]];
+                [_pathArray addObject:[self roundShapWithPosition:SelectButtonPositionButtom]];
+                [_pathArray addObject:[self roundShapWithPosition:SelectButtonPositionCenter]];
                 break;
-            case ButtonType_Round_Single:
+            case ButtonTypeRoundSingle:
                 [_pathArray addObject:[self roundShap]];
                 break;
-            case ButtonType_Rect:
+            case ButtonTypeRect:
                 [_pathArray addObject:[self rectShap]];
                 break;
             default:
@@ -178,10 +178,10 @@
 {
     handel=target;
     switch (state) {
-        case ButtonClickType_LongPress:
+        case ButtonClickTypeLongPress:
             longPressAction=action;
             break;
-        case ButtonClickType_TouchUpInside:
+        case ButtonClickTypeTouchUpInside:
             touchAction=action;
             break;
         default:
@@ -288,32 +288,32 @@
     
     float  offset=OffSet;
     
-    float radius=((position==SelectButtonPosition_Left||position==SelectButtonPosition_Right)? CGRectGetHeight(self.frame)/2:CGRectGetWidth(self.frame)/2)-offset;
-    float height=((position==SelectButtonPosition_Left||position==SelectButtonPosition_Right)? CGRectGetWidth(self.frame)/3.0:CGRectGetHeight(self.frame)/3.0)-radius;
+    float radius=((position==SelectButtonPositionLeft||position==SelectButtonPositionRight)? CGRectGetHeight(self.frame)/2:CGRectGetWidth(self.frame)/2)-offset;
+    float height=((position==SelectButtonPositionLeft||position==SelectButtonPositionRight)? CGRectGetWidth(self.frame)/3.0:CGRectGetHeight(self.frame)/3.0)-radius;
     CGRect frame=self.frame;
-    CGPoint center;
-    float startAngle ;
-    float endAngle;
+    CGPoint center = CGPointZero;
+    float startAngle = 0;
+    float endAngle = 0;
     switch (position) {
-        case SelectButtonPosition_Right:
+        case SelectButtonPositionRight:
             center.x=CGRectGetWidth(frame)-radius-offset;
             center.y=CGRectGetHeight(frame)/2.0;
             startAngle=3/2.0*M_PI;
             endAngle=M_PI/2.0;
             break;
-        case SelectButtonPosition_Left:
+        case SelectButtonPositionLeft:
             center.x= radius+offset;
             center.y=CGRectGetHeight(frame)/2.0;
             startAngle=M_PI/2.0;
             endAngle=3/2.0*M_PI;
             break;
-        case SelectButtonPosition_Top:
+        case SelectButtonPositionTop:
             center.x= CGRectGetWidth(frame)/2;
             center.y=radius+offset;
             startAngle=M_PI;
             endAngle=0;
             break;
-        case SelectButtonPosition_Buttom:
+        case SelectButtonPositionButtom:
             center.x= CGRectGetWidth(frame)/2;
             center.y=CGRectGetHeight(frame)-radius-offset;
             startAngle=0;
@@ -325,15 +325,15 @@
     
     [bezierPath addArcWithCenter:center radius:radius startAngle:startAngle endAngle:endAngle clockwise:YES];
     
-    CGPoint point;
+    CGPoint point = CGPointZero;
        switch (position) {
-        case SelectButtonPosition_Right:
-        case SelectButtonPosition_Left:
+        case SelectButtonPositionRight:
+        case SelectButtonPositionLeft:
             point.x=center.x-height*sin(endAngle);
             point.y=center.y+radius*sin(endAngle);
             break;
-        case SelectButtonPosition_Top:
-        case SelectButtonPosition_Buttom:
+        case SelectButtonPositionTop:
+        case SelectButtonPositionButtom:
             point.x=center.x+radius *cos(endAngle);
             point.y=center.y+height*cos(endAngle);;
             break;
@@ -342,12 +342,12 @@
     }
        [bezierPath addLineToPoint:point];
        switch (position) {
-        case SelectButtonPosition_Right:
-        case SelectButtonPosition_Left:
+        case SelectButtonPositionRight:
+        case SelectButtonPositionLeft:
             point.y=point.y-radius*2*sin(endAngle);
             break;
-        case SelectButtonPosition_Top:
-        case SelectButtonPosition_Buttom:
+        case SelectButtonPositionTop:
+        case SelectButtonPositionButtom:
             point.x=point.x-radius*2*cos(endAngle);
             break;
         default:
@@ -367,7 +367,7 @@
     int positionTag=log2(position);
     
     CGPoint center=CGPointMake(CGRectGetWidth(self.frame)/2, CGRectGetHeight(self.frame)/2);
-    if (position==SelectButtonPosition_Center) {
+    if (position==SelectButtonPositionCenter) {
         return [self roundPathWithRadius:(radius-width-OffSet) center:center];
     }
     UIBezierPath* bezierPath = [UIBezierPath bezierPath];
@@ -409,7 +409,7 @@
     [bezierPath addArcWithCenter:center radius:radius startAngle:0 endAngle:2.0*M_PI clockwise:YES];
     [bezierPath closePath];
     
-    return PathDic(bezierPath, [NSNumber numberWithInteger:SelectButtonPosition_Center]);
+    return PathDic(bezierPath, [NSNumber numberWithInteger:SelectButtonPositionCenter]);
 }
 
 
@@ -443,7 +443,7 @@
     [bezierPath addArcWithCenter:center radius:radius startAngle:endAngle endAngle:startAngle clockwise:YES];
     [bezierPath closePath];
     
-     return PathDic(bezierPath, [NSNumber numberWithInteger:SelectButtonPosition_Center]);
+     return PathDic(bezierPath, [NSNumber numberWithInteger:SelectButtonPositionCenter]);
 }
 
 

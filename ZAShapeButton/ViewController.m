@@ -48,8 +48,8 @@
         
         
         ZAShapeButton *buttonView=[[ZAShapeButton alloc]initWithFrame:CGRectMake(0, 0, 50, 50) ButtonType:i];
-        [buttonView addTarget:self action:@selector(buttonClick:) forResponseState:ButtonClickType_TouchUpInside];
-        [buttonView addTarget:self action:@selector(longPressButtonClick:) forResponseState:ButtonClickType_LongPress];
+        [buttonView addTarget:self action:@selector(buttonClick:) forResponseState:ButtonClickTypeTouchUpInside];
+        [buttonView addTarget:self action:@selector(longPressButtonClick:) forResponseState:ButtonClickTypeLongPress];
         [self.view addSubview:buttonView];
         
         
@@ -57,7 +57,7 @@
      
     
         
-        CGPoint center;
+        CGPoint center = CGPointZero;
         UIImage *image;
         
     
@@ -167,21 +167,21 @@
     
     
     switch (button.selectButtonPosition) {
-        case SelectButtonPosition_Top:
+        case SelectButtonPositionTop:
             
             partString=@"上";
             break;
-        case SelectButtonPosition_Buttom:
+        case SelectButtonPositionButtom:
             partString=@"下";
             break;
-        case SelectButtonPosition_Center:
+        case SelectButtonPositionCenter:
             
             partString=@"中";
             break;
-        case SelectButtonPosition_Left:
+        case SelectButtonPositionLeft:
             partString=@"左";
             break;
-        case SelectButtonPosition_Right:
+        case SelectButtonPositionRight:
             partString=@"右";
             break;
         default:

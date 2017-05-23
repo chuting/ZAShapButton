@@ -15,24 +15,24 @@ typedef enum ButtonType{
     /**
      *  圆形五个按钮 上下左右 中心
      */
-    ButtonType_Round=0,
+    ButtonTypeRound=0,
     /**
      *  单个圆形按钮  只响应 SelectButtonPosition_Center
      */
-    ButtonType_Round_Single,
+    ButtonTypeRoundSingle,
     /**
      *  圆角按钮 只响应 SelectButtonPosition_Center
      */
-    ButtonType_Rect,
+    ButtonTypeRect,
     /**
      *  竖加减  只响应 SelectButtonPosition_Buttom  SelectButtonPosition_Top，
      */
-    ButtonType_V_PlusAndMin,
+    ButtonTypeVPlusAndMin,
     
     /**
      *  横加减   只响应 SelectButtonPosition_Right  SelectButtonPosition_Left，
      */
-    ButtonType_H_PlusAndMin,
+    ButtonTypeHPlusAndMin,
     
 }ButtonType;
 
@@ -43,10 +43,10 @@ typedef enum ButtonClickType
 {
 
     //手势抬起响应 
-    ButtonClickType_TouchUpInside=0,
+    ButtonClickTypeTouchUpInside=0,
     
     //长按0.5s响应
-    ButtonClickType_LongPress,
+    ButtonClickTypeLongPress,
 
 
 }ButtonClickType;
@@ -55,11 +55,11 @@ typedef enum ButtonClickType
 
 typedef enum SelectButtonPosition{
     
-    SelectButtonPosition_Top =1,
-    SelectButtonPosition_Right =1<<1 ,
-    SelectButtonPosition_Buttom =1<<2 ,
-    SelectButtonPosition_Left =1<<3,
-    SelectButtonPosition_Center =1<<4,
+    SelectButtonPositionTop =1,
+    SelectButtonPositionRight =1<<1 ,
+    SelectButtonPositionButtom =1<<2 ,
+    SelectButtonPositionLeft =1<<3,
+    SelectButtonPositionCenter =1<<4,
     
 }SelectButtonPosition;
 
